@@ -3,58 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RW Ar Condicionado | Orçamento Rápido</title>
+    <title>RW Ar Condicionado | Instalação, Limpeza e Conserto</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #0072ff; --success: #25d366; --dark: #1e293b; --light: #f8fafc; }
+        :root { --primary: #0072ff; --primary-dark: #0052b4; --success: #25d366; --dark: #1e293b; --light: #f8fafc; --instagram: #e1306c; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
-        /* Lado Esquerdo: Formulário */
-        .form-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; }
-        .btn { display: block; width: 100%; padding: 15px; background: var(--success); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; }
+        /* Layout em duas colunas */
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 
-        /* Lado Direito: Sobre a Empresa */
-        .about-box h2 { color: var(--primary); margin-bottom: 20px; }
+        /* Lado Esquerdo: Empresa */
+        .about-box h2 { color: var(--primary); margin-bottom: 20px; font-size: 2rem; }
         .about-box p { margin-bottom: 15px; color: #475569; }
         .about-box ul { list-style: none; margin-top: 20px; }
         .about-box li { margin-bottom: 10px; display: flex; align-items: center; }
         .about-box li::before { content: "✓"; color: var(--primary); font-weight: bold; margin-right: 10px; }
 
-        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
+        /* Lado Direito: Formulário */
+        .form-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; }
+        .btn-submit { width: 100%; padding: 15px; background: var(--success); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; }
+        .whatsapp-link { display: block; text-align: center; margin-top: 15px; color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+
+        @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="form-card">
-            <h2>Solicite seu Orçamento</h2>
-            <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST" style="margin-top:20px;">
-                <input type="text" name="nome" placeholder="Seu Nome" required>
-                <input type="text" name="problema" placeholder="Descreva o problema" required>
-                <select name="altura">
-                    <option value="">Altura do local (acesso)</option>
-                    <option value="Térreo">Térreo</option>
-                    <option value="2º andar">2º Andar</option>
-                    <option value="Precisa de escada">Andar superior (precisa de escada)</option>
-                </select>
-                <button type="submit" class="btn">Enviar Pedido</button>
-            </form>
-            <a href="https://wa.me/5500999999999?text=Quero um orçamento." style="display:block; text-align:center; margin-top:15px; font-size:0.9rem; color:var(--primary);">Ou chame direto no WhatsApp</a>
-        </div>
+        <div class="content-grid">
+            
+            <div class="about-box">
+                <h2>RW Ar Condicionado</h2>
+                <p>Resolvemos seu problema com <b>velocidade, responsabilidade e preço justo</b>. Sem enrolação.</p>
+                <p>Somos especialistas em climatização no interior. Atendemos com transparência total, focados na durabilidade do seu aparelho e na sua saúde.</p>
+                <ul>
+                    <li>Atendimento técnico ágil</li>
+                    <li>Orçamentos honestos</li>
+                    <li>Instalação com garantia</li>
+                    <li>Higienização profunda</li>
+                </ul>
+            </div>
 
-        <div class="about-box">
-            <h2>Por que a RW?</h2>
-            <p>Somos especialistas em climatização no interior. Resolvemos seu problema com <b>velocidade, responsabilidade e preço justo</b>. Chega de esperar dias por um orçamento ou técnicos que não aparecem.</p>
-            <p>Trabalhamos de forma transparente, sem enrolação e com foco total na qualidade do serviço entregue.</p>
-            <ul>
-                <li>Atendimento técnico ágil</li>
-                <li>Orçamentos honestos</li>
-                <li>Serviço com garantia</li>
-                <li>Experiência em Split e Inverter</li>
-            </ul>
+            <div class="form-card">
+                <h3>Solicite seu Orçamento</h3>
+                <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST" style="margin-top:20px;">
+                    <input type="text" name="nome" placeholder="Seu Nome" required>
+                    <input type="text" name="problema" placeholder="Descreva o problema (ex: não gela, barulho)" required>
+                    <select name="altura">
+                        <option value="">Altura do local (Acesso à máquina)</option>
+                        <option value="Térreo">Térreo</option>
+                        <option value="2º andar">2º Andar</option>
+                        <option value="Andar superior (precisa de escada)">Andar superior (precisa de escada)</option>
+                    </select>
+                    <button type="submit" class="btn-submit">Enviar Pedido de Orçamento</button>
+                </form>
+                <a href="https://wa.me/5500999999999?text=Olá, quero um orçamento direto." class="whatsapp-link">
+                    Ou clique aqui e fale direto pelo WhatsApp ➔
+                </a>
+            </div>
+
         </div>
     </div>
 
