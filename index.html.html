@@ -3,26 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RW Ar Condicionado | Atendimento Especializado</title>
+    <title>RW Ar Condicionado | Orçamento</title>
     <style>
         * { box-sizing: border-box; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f7f6; color: #333; }
+        .page-wrapper { display: flex; flex-wrap: wrap; max-width: 900px; margin: 40px auto; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .info-side { flex: 1; padding: 40px; background: #0a2540; color: white; min-width: 300px; }
+        .form-side { flex: 1; padding: 40px; min-width: 300px; }
         
-        /* Layout Grid */
-        .page-wrapper { display: flex; flex-wrap: wrap; max-width: 1000px; margin: 50px auto; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .info-side { flex: 1; padding: 40px; background: #0a2540; color: white; }
-        .form-side { flex: 1; padding: 40px; }
-        
-        h1 { margin-top: 0; }
-        .social-links { margin-top: 30px; }
-        .social-links a { display: block; color: #25d366; text-decoration: none; font-weight: bold; margin-bottom: 10px; }
-        
-        /* Formulário */
-        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
-        button { width: 100%; padding: 15px; background: #25d366; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+        input, select { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; }
+        button { width: 100%; padding: 15px; background: #25d366; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 10px; }
         button:hover { background: #128c7e; }
-
-        @media (max-width: 768px) { .info-side, .form-side { flex: 100%; } }
+        .social-links a { display: block; color: #25d366; text-decoration: none; font-weight: bold; margin-top: 15px; }
     </style>
 </head>
 <body>
@@ -30,41 +22,54 @@
 <div class="page-wrapper">
     <div class="info-side">
         <h1>RW Ar Condicionado</h1>
-        <p>Especialistas em instalação, higienização e manutenção preventiva.</p>
-        <p>Compromisso com a qualidade, pontualidade e o conforto térmico da sua família ou empresa.</p>
-        
+        <p>Especialistas em instalação, higienização e manutenção.</p>
         <div class="social-links">
-            <p><strong>Conecte-se conosco:</strong></p>
-            <a href="https://wa.me/55SEUNUMERO" style="color: #25d366;">WhatsApp Oficial</a>
-            <a href="https://instagram.com/SEU_USER" style="color: #fff;">Instagram @RW_ArCondicionado</a>
+            <p><strong>Atendimento:</strong></p>
+            <a href="https://wa.me/55SEUNUMERO">WhatsApp Oficial</a>
+            <a href="https://instagram.com/SEU_USER" style="color:white;">Instagram @RW_ArCondicionado</a>
         </div>
     </div>
 
     <div class="form-side">
         <h3>Solicite seu Orçamento</h3>
-        <label>Serviço:</label>
         <select id="servico">
             <option value="Instalação">Instalação</option>
             <option value="Limpeza">Limpeza / Higienização</option>
             <option value="Conserto">Conserto / Manutenção</option>
         </select>
         <input type="text" id="btu" placeholder="Capacidade (BTUs)">
-        <input type="text" id="local" placeholder="Local (Ex: Parede de alvenaria)">
-        <input type="text" id="bairro" placeholder="Cidade / Bairro">
+        
+        <input type="text" id="cep" placeholder="Digite o CEP (apenas números)" onblur="buscarCep()">
+        <input type="text" id="endereco" placeholder="Endereço carregará aqui" readonly>
         
         <button onclick="enviar()">ENVIAR PARA WHATSAPP</button>
     </div>
 </div>
 
 <script>
+    // Função para buscar CEP no ViaCEP
+    async function buscarCep() {
+        const cep = document.getElementById('cep').value.replace(/\D/g, '');
+        if (cep.length === 8) {
+            const res = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+            const data = await res.json();
+            if (!data.erro) {
+                document.getElementById('endereco').value = `${data.logradouro}, ${data.bairro} - ${data.localidade}/${data.uf}`;
+            } else {
+                alert("CEP não encontrado.");
+            }
+        }
+    }
+
+    // Função para enviar os dados formatados
     function enviar() {
         const s = document.getElementById('servico').value;
         const b = document.getElementById('btu').value;
-        const l = document.getElementById('local').value;
-        const c = document.getElementById('bairro').value;
+        const end = document.getElementById('endereco').value;
+        const numero = "55SEUNUMERO"; // Substitua pelo número real
         
-        const msg = `Olá, gostaria de um orçamento:%0A- Serviço: ${s}%0A- BTUs: ${b}%0A- Local: ${l}%0A- Região: ${c}`;
-        window.location.href = `https://wa.me/55SEUNUMERO?text=${msg}`;
+        const msg = `Olá, gostaria de um orçamento:%0A- Serviço: ${s}%0A- BTUs: ${b}%0A- Endereço: ${end}`;
+        window.location.href = `https://wa.me/${numero}?text=${msg}`;
     }
 </script>
 
