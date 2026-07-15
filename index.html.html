@@ -1,110 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>RW Ar Condicionado | Orçamento Dinâmico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RW Ar Condicionado | Soluções Rápidas e Profissionais</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; margin: 0; padding: 20px; }
-        .page-wrapper { max-width: 800px; margin: auto; background: white; border-radius: 15px; display: flex; flex-wrap: wrap; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .info-side { flex: 1; padding: 40px; background: #0a2540; color: white; min-width: 300px; }
-        .form-side { flex: 1; padding: 40px; min-width: 300px; }
-        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
-        button { width: 100%; padding: 15px; background: #25d366; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
-        .dynamic-field { display: none; }
+        :root { --primary: #0072ff; --primary-dark: #0052b4; --success: #25d366; --dark: #1e293b; --light: #f8fafc; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        header { background: white; padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary); text-align: center; }
+
+        .hero { padding: 40px 0; text-align: center; }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 10px; color: var(--dark); }
+        .hero p { color: #64748b; margin-bottom: 30px; }
+
+        .form-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); max-width: 500px; margin: 0 auto; }
+        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+        .btn { display: block; width: 100%; padding: 15px; background: var(--success); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; font-size: 1rem; }
+        
+        .whatsapp-link { display: block; text-align: center; margin-top: 20px; color: var(--primary); font-weight: 600; text-decoration: none; }
+        
+        footer { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-<div class="page-wrapper">
-    <div class="info-side">
-        <h1>RW Ar Condicionado</h1>
-        <p>Preencha os dados e receba seu orçamento personalizado.</p>
-    </div>
+    <header>
+        <div class="logo">RW <span>Ar Condicionado</span></div>
+    </header>
 
-    <div class="form-side">
-        <label>Serviço:</label>
-        <select id="servico" onchange="atualizarFormulario()">
-            <option value="Instalação">Instalação</option>
-            <option value="Limpeza">Limpeza / Higienização</option>
-            <option value="Conserto">Conserto / Manutenção</option>
-        </select>
+    <section class="hero">
+        <div class="container">
+            <h1>Resolvemos seu problema agora.</h1>
+            <p>Atendimento rápido, responsável e com preço justo. Sem enrolação.</p>
 
-        <label>Capacidade (BTUs):</label>
-        <select id="btu">
-            <option value="9.000">9.000 BTUs</option>
-            <option value="12.000">12.000 BTUs</option>
-            <option value="18.000">18.000 BTUs</option>
-            <option value="24.000">24.000 BTUs</option>
-            <option value="Outro">Outro</option>
-        </select>
+            <div class="form-card">
+                <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST">
+                    <input type="text" name="nome" placeholder="Seu Nome" required>
+                    <input type="text" name="problema" placeholder="Descreva o problema (ex: não gela, barulho)" required>
+                    <select name="altura">
+                        <option value="">Altura do local (Acesso à máquina)</option>
+                        <option value="Térreo">Térreo</option>
+                        <option value="2º andar">2º Andar</option>
+                        <option value="Andar superior (precisa de escada)">Andar superior (precisa de escada)</option>
+                    </select>
+                    <button type="submit" class="btn">Enviar Pedido de Orçamento</button>
+                </form>
 
-        <div id="campoInstalacao" class="dynamic-field">
-            <label>Você já possui o aparelho?</label>
-            <select id="temMaquina">
-                <option value="Sim">Sim, já tenho o aparelho</option>
-                <option value="Nao">Não, quero que a RW forneça</option>
-            </select>
+                <a href="https://wa.me/5500999999999?text=Olá, quero um orçamento direto." class="whatsapp-link">
+                    Ou clique aqui e fale direto pelo WhatsApp ➔
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div id="campoLimpeza" class="dynamic-field">
-            <label>Qual o estado do aparelho?</label>
-            <select id="estadoMaquina">
-                <option value="Normal">Sujeira básica</option>
-                <option value="Pesada">Muito tempo sem limpar</option>
-            </select>
-        </div>
+    <footer>
+        <p>&copy; 2026 RW Ar Condicionado. Todos os direitos reservados.</p>
+    </footer>
 
-        <label>Altura do local (ex: térreo, 2º andar):</label>
-        <input type="text" id="altura" placeholder="Ex: Térreo">
-
-        <label>Voltagem:</label>
-        <select id="voltagem">
-            <option value="220v">220v</option>
-            <option value="110v">110v</option>
-        </select>
-
-        <label>CEP:</label>
-        <input type="text" id="cep" placeholder="00000-000" onblur="buscarCep()">
-        <input type="text" id="endereco" placeholder="Endereço" readonly>
-
-        <button onclick="enviar()">SOLICITAR ORÇAMENTO</button>
-    </div>
-</div>
-
-<script>
-    function atualizarFormulario() {
-        const servico = document.getElementById('servico').value;
-        document.getElementById('campoInstalacao').style.display = (servico === 'Instalação') ? 'block' : 'none';
-        document.getElementById('campoLimpeza').style.display = (servico === 'Limpeza') ? 'block' : 'none';
-    }
-
-    async function buscarCep() {
-        const cep = document.getElementById('cep').value.replace(/\D/g, '');
-        if (cep.length === 8) {
-            const res = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-            const data = await res.json();
-            if (!data.erro) document.getElementById('endereco').value = `${data.logradouro}, ${data.bairro} - ${data.localidade}`;
-        }
-    }
-
-    function enviar() {
-        const s = document.getElementById('servico').value;
-        const b = document.getElementById('btu').value;
-        const h = document.getElementById('altura').value;
-        const v = document.getElementById('voltagem').value;
-        const end = document.getElementById('endereco').value;
-        
-        // Coleta extra dinâmica
-        let extra = "";
-        if(s === 'Instalação') extra = ` - Máquina própria: ${document.getElementById('temMaquina').value}`;
-        if(s === 'Limpeza') extra = ` - Estado: ${document.getElementById('estadoMaquina').value}`;
-
-        const msg = `Olá, gostaria de um orçamento:%0A- Serviço: ${s}${extra}%0A- Capacidade: ${b}%0A- Altura: ${h}%0A- Voltagem: ${v}%0A- Endereço: ${end}`;
-        window.location.href = `https://wa.me/55SEUNUMERO?text=${msg}`;
-    }
-    
-    // Iniciar na carga
-    atualizarFormulario();
-</script>
 </body>
 </html>
