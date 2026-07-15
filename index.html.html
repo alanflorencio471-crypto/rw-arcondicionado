@@ -2,19 +2,15 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RW Ar Condicionado | Orçamento</title>
+    <title>RW Ar Condicionado | Orçamento Dinâmico</title>
     <style>
-        * { box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f7f6; color: #333; }
-        .page-wrapper { display: flex; flex-wrap: wrap; max-width: 900px; margin: 40px auto; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; margin: 0; padding: 20px; }
+        .page-wrapper { max-width: 800px; margin: auto; background: white; border-radius: 15px; display: flex; flex-wrap: wrap; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .info-side { flex: 1; padding: 40px; background: #0a2540; color: white; min-width: 300px; }
         .form-side { flex: 1; padding: 40px; min-width: 300px; }
-        
-        input, select { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; }
-        button { width: 100%; padding: 15px; background: #25d366; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 10px; }
-        button:hover { background: #128c7e; }
-        .social-links a { display: block; color: #25d366; text-decoration: none; font-weight: bold; margin-top: 15px; }
+        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        button { width: 100%; padding: 15px; background: #25d366; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+        .dynamic-field { display: none; }
     </style>
 </head>
 <body>
@@ -22,56 +18,93 @@
 <div class="page-wrapper">
     <div class="info-side">
         <h1>RW Ar Condicionado</h1>
-        <p>Especialistas em instalação, higienização e manutenção.</p>
-        <div class="social-links">
-            <p><strong>Atendimento:</strong></p>
-            <a href="https://wa.me/55SEUNUMERO">WhatsApp Oficial</a>
-            <a href="https://instagram.com/SEU_USER" style="color:white;">Instagram @RW_ArCondicionado</a>
-        </div>
+        <p>Preencha os dados e receba seu orçamento personalizado.</p>
     </div>
 
     <div class="form-side">
-        <h3>Solicite seu Orçamento</h3>
-        <select id="servico">
+        <label>Serviço:</label>
+        <select id="servico" onchange="atualizarFormulario()">
             <option value="Instalação">Instalação</option>
             <option value="Limpeza">Limpeza / Higienização</option>
             <option value="Conserto">Conserto / Manutenção</option>
         </select>
-        <input type="text" id="btu" placeholder="Capacidade (BTUs)">
-        
-        <input type="text" id="cep" placeholder="Digite o CEP (apenas números)" onblur="buscarCep()">
-        <input type="text" id="endereco" placeholder="Endereço carregará aqui" readonly>
-        
-        <button onclick="enviar()">ENVIAR PARA WHATSAPP</button>
+
+        <label>Capacidade (BTUs):</label>
+        <select id="btu">
+            <option value="9.000">9.000 BTUs</option>
+            <option value="12.000">12.000 BTUs</option>
+            <option value="18.000">18.000 BTUs</option>
+            <option value="24.000">24.000 BTUs</option>
+            <option value="Outro">Outro</option>
+        </select>
+
+        <div id="campoInstalacao" class="dynamic-field">
+            <label>Você já possui o aparelho?</label>
+            <select id="temMaquina">
+                <option value="Sim">Sim, já tenho o aparelho</option>
+                <option value="Nao">Não, quero que a RW forneça</option>
+            </select>
+        </div>
+
+        <div id="campoLimpeza" class="dynamic-field">
+            <label>Qual o estado do aparelho?</label>
+            <select id="estadoMaquina">
+                <option value="Normal">Sujeira básica</option>
+                <option value="Pesada">Muito tempo sem limpar</option>
+            </select>
+        </div>
+
+        <label>Altura do local (ex: térreo, 2º andar):</label>
+        <input type="text" id="altura" placeholder="Ex: Térreo">
+
+        <label>Voltagem:</label>
+        <select id="voltagem">
+            <option value="220v">220v</option>
+            <option value="110v">110v</option>
+        </select>
+
+        <label>CEP:</label>
+        <input type="text" id="cep" placeholder="00000-000" onblur="buscarCep()">
+        <input type="text" id="endereco" placeholder="Endereço" readonly>
+
+        <button onclick="enviar()">SOLICITAR ORÇAMENTO</button>
     </div>
 </div>
 
 <script>
-    // Função para buscar CEP no ViaCEP
+    function atualizarFormulario() {
+        const servico = document.getElementById('servico').value;
+        document.getElementById('campoInstalacao').style.display = (servico === 'Instalação') ? 'block' : 'none';
+        document.getElementById('campoLimpeza').style.display = (servico === 'Limpeza') ? 'block' : 'none';
+    }
+
     async function buscarCep() {
         const cep = document.getElementById('cep').value.replace(/\D/g, '');
         if (cep.length === 8) {
             const res = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
             const data = await res.json();
-            if (!data.erro) {
-                document.getElementById('endereco').value = `${data.logradouro}, ${data.bairro} - ${data.localidade}/${data.uf}`;
-            } else {
-                alert("CEP não encontrado.");
-            }
+            if (!data.erro) document.getElementById('endereco').value = `${data.logradouro}, ${data.bairro} - ${data.localidade}`;
         }
     }
 
-    // Função para enviar os dados formatados
     function enviar() {
         const s = document.getElementById('servico').value;
         const b = document.getElementById('btu').value;
+        const h = document.getElementById('altura').value;
+        const v = document.getElementById('voltagem').value;
         const end = document.getElementById('endereco').value;
-        const numero = "55SEUNUMERO"; // Substitua pelo número real
         
-        const msg = `Olá, gostaria de um orçamento:%0A- Serviço: ${s}%0A- BTUs: ${b}%0A- Endereço: ${end}`;
-        window.location.href = `https://wa.me/${numero}?text=${msg}`;
-    }
-</script>
+        // Coleta extra dinâmica
+        let extra = "";
+        if(s === 'Instalação') extra = ` - Máquina própria: ${document.getElementById('temMaquina').value}`;
+        if(s === 'Limpeza') extra = ` - Estado: ${document.getElementById('estadoMaquina').value}`;
 
+        const msg = `Olá, gostaria de um orçamento:%0A- Serviço: ${s}${extra}%0A- Capacidade: ${b}%0A- Altura: ${h}%0A- Voltagem: ${v}%0A- Endereço: ${end}`;
+        window.location.href = `https://wa.me/55SEUNUMERO?text=${msg}`;
+    }
+    
+    // Iniciar na carga
+    atualizarFormulario();
+</script>
 </body>
 </html>
