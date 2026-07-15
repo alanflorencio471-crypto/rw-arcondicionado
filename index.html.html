@@ -21,8 +21,8 @@
         .fa-instagram { color: var(--ig); }
         .social-icons a:hover { transform: scale(1.1); }
 
-        /* Formulário */
-        .form-card { background: white; padding: 30px; border-radius: 15px; border: 1px solid #e2e8f0; }
+        /* Formulário Melhorado */
+        .form-card { background: white; padding: 30px; border-radius: 15px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); }
         input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
         .btn-submit { width: 100%; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: background 0.3s; }
         .btn-submit:hover { background: var(--dark); }
@@ -44,9 +44,12 @@
         </div>
 
         <div class="form-card">
-            <h3>Solicite seu Orçamento</h3>
-            <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST" style="margin-top:20px;">
-                <input type="text" name="nome" placeholder="Seu Nome" required>
+            <h3><i class="fa-solid fa-calendar-check" style="color: var(--primary);"></i> Agende sua Visita</h3>
+            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 20px;">Taxa de visita abatida no valor do serviço aprovado.</p>
+            <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST">
+                <input type="text" name="nome" placeholder="Seu Nome Completo" required>
+                <input type="text" name="cep" placeholder="CEP (00000-000)" pattern="\d{5}-?\d{3}" required>
+                <input type="tel" name="whatsapp" placeholder="Seu WhatsApp com DDD" required>
                 <select id="servico" name="servico" onchange="atualizarFormulario()">
                     <option value="">Selecione o serviço</option>
                     <option value="instalacao">Instalação</option>
@@ -54,7 +57,7 @@
                     <option value="conserto">Conserto / Manutenção</option>
                 </select>
                 <div id="camposExtras"></div>
-                <input type="text" name="problema" placeholder="Descreva o problema" required>
+                <input type="text" name="problema" placeholder="Descreva o problema (ex: barulho, não gela)" required>
                 <select name="altura">
                     <option value="">Altura do local (acesso)</option>
                     <option value="Terreo">Térreo</option>
@@ -75,7 +78,7 @@
         }
     </script>
 
-    <!-- Script do Botpress abaixo -->
+    <!-- Script do Botpress mantido -->
     <script src="https://cdn.botpress.cloud/desk/webchat/v4.1/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2026/07/15/14/20260715145034-U9DFR84J.js" defer></script>
 
