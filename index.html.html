@@ -1,79 +1,78 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RW Ar Condicionado | Excelência em Climatização</title>
+    <title>RW Ar Condicionado | Soluções Rápidas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #002d72; --secondary: #00c6ff; --dark: #1e293b; --light: #f8fafc; --success: #25d366; --instagram: #e1306c; }
-        body { font-family: 'Arial', sans-serif; background-color: var(--light); color: var(--dark); line-height: 1.6; margin: 0; }
-        nav { background: white; padding: 20px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        nav a { margin: 0 15px; text-decoration: none; color: var(--primary); font-weight: bold; }
-        .hero { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 20px; text-align: center; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-        .section-title { text-align: center; font-size: 2rem; margin-bottom: 30px; color: var(--primary); }
-        .btn { padding: 12px 24px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; display: inline-block; margin-top: 10px; }
-        .btn-whatsapp { background-color: var(--success); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; }
-        footer { background: #020617; color: #94a3b8; padding: 30px; text-align: center; }
+        :root { --primary: #0072ff; --success: #25d366; --dark: #1e293b; --light: #f8fafc; --ig: #e1306c; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+
+        /* Estilização da Empresa */
+        .about-box { background: white; padding: 30px; border-radius: 15px; border: 1px solid #e2e8f0; }
+        .about-box h2 { color: var(--primary); margin-bottom: 20px; }
+        .social-icons { margin-top: 25px; display: flex; gap: 15px; }
+        .social-icons a { font-size: 2rem; text-decoration: none; transition: transform 0.2s; }
+        .fa-whatsapp { color: var(--success); }
+        .fa-instagram { color: var(--ig); }
+        .social-icons a:hover { transform: scale(1.1); }
+
+        /* Formulário */
+        .form-card { background: white; padding: 30px; border-radius: 15px; border: 1px solid #e2e8f0; }
+        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+        .btn-submit { width: 100%; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: background 0.3s; }
+        .btn-submit:hover { background: var(--dark); }
+
+        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre Nós</a>
-        <a href="#servicos">Nossos Serviços</a>
-        <a href="#galeria">Galeria</a>
-        <a href="#clientes">Clientes</a>
-        <a href="#contato">Contato</a>
-    </nav>
-
-    <header id="inicio" class="hero">
-        <h1>RW Ar Condicionado</h1>
-        <p>Soluções completas em climatização com agilidade e compromisso.</p>
-        <a href="https://wa.me/5500999999999" class="btn btn-whatsapp">Fale com um técnico</a>
-    </header>
-
-    <section id="sobre" class="container">
-        <h2 class="section-title">Sobre Nós</h2>
-        <p>A RW Ar Condicionado nasceu do compromisso com o conforto térmico e a saúde dos nossos clientes. Com equipe qualificada, entregamos soluções técnicas com transparência e preço justo.</p>
-    </section>
-
-    <section id="servicos" class="container">
-        <h2 class="section-title">Nossos Serviços</h2>
-        <div class="grid">
-            <div class="card"><h3>Instalação</h3><p>Modelos Split, Inverter e Convencionais.</p></div>
-            <div class="card"><h3>Higienização</h3><p>Limpeza profunda para eliminar fungos e bactérias.</p></div>
-            <div class="card"><h3>Manutenção</h3><p>Preventiva e corretiva para evitar quebras.</p></div>
+    <div class="container">
+        <div class="about-box">
+            <h2>RW Ar Condicionado</h2>
+            <p>Resolvemos seu problema com <b>velocidade, responsabilidade e preço justo</b>. Atendimento técnico ágil, orçamentos sem enrolação e foco total na qualidade do seu conforto térmico.</p>
+            
+            <div class="social-icons">
+                <a href="https://wa.me/5500999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/SEU_USER_AQUI" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-    </section>
 
-    <section id="galeria" class="container">
-        <h2 class="section-title">Galeria</h2>
-        <p style="text-align:center;">Confira nosso trabalho e a qualidade do nosso acabamento.</p>
-    </section>
-
-    <section id="clientes" class="container">
-        <h2 class="section-title">O que os clientes falam</h2>
-        <div class="grid">
-            <div class="card"><p>"Serviço excelente e muito limpo. Super recomendo!"</p><strong>- Cliente Satisfeito</strong></div>
+        <div class="form-card">
+            <h3>Solicite seu Orçamento</h3>
+            <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST" style="margin-top:20px;">
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                <select id="servico" name="servico" onchange="atualizarFormulario()">
+                    <option value="">Selecione o serviço</option>
+                    <option value="instalacao">Instalação</option>
+                    <option value="limpeza">Limpeza / Higienização</option>
+                    <option value="conserto">Conserto / Manutenção</option>
+                </select>
+                <div id="camposExtras"></div>
+                <input type="text" name="problema" placeholder="Descreva o problema" required>
+                <select name="altura">
+                    <option value="">Altura do local (acesso)</option>
+                    <option value="Terreo">Térreo</option>
+                    <option value="2andar">2º Andar</option>
+                    <option value="Escada">Andar superior (precisa de escada)</option>
+                </select>
+                <button type="submit" class="btn-submit">Enviar Pedido de Orçamento</button>
+            </form>
         </div>
-    </section>
+    </div>
 
-    <section id="contato" class="container">
-        <h2 class="section-title">Contato</h2>
-        <p style="text-align:center;">Precisa de um orçamento? Clique abaixo:</p>
-        <div style="text-align:center;">
-            <a href="https://wa.me/5500999999999" class="btn btn-whatsapp">WhatsApp</a>
-            <a href="https://instagram.com/SEU_USER_AQUI" class="btn" style="background-color: var(--instagram);">Instagram</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 RW Ar Condicionado - Todos os direitos reservados.</p>
-    </footer>
-
+    <script>
+        function atualizarFormulario() {
+            const servico = document.getElementById('servico').value;
+            const camposExtras = document.getElementById('camposExtras');
+            camposExtras.innerHTML = servico === 'instalacao' ? 
+                '<input type="text" name="maquina" placeholder="Já possui a máquina? (Sim/Não)" required>' : '';
+        }
+    </script>
 </body>
 </html>
