@@ -3,70 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RW Ar Condicionado | Instalação, Limpeza e Conserto</title>
+    <title>RW Ar Condicionado | Soluções Rápidas e Profissionais</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #0072ff; --primary-dark: #0052b4; --success: #25d366; --dark: #1e293b; --light: #f8fafc; --instagram: #e1306c; }
+        :root { --primary: #0072ff; --success: #25d366; --dark: #1e293b; --light: #f8fafc; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 
-        /* Layout em duas colunas */
-        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-
-        /* Lado Esquerdo: Empresa */
+        /* Lado Esquerdo: Descrição */
         .about-box h2 { color: var(--primary); margin-bottom: 20px; font-size: 2rem; }
-        .about-box p { margin-bottom: 15px; color: #475569; }
-        .about-box ul { list-style: none; margin-top: 20px; }
-        .about-box li { margin-bottom: 10px; display: flex; align-items: center; }
         .about-box li::before { content: "✓"; color: var(--primary); font-weight: bold; margin-right: 10px; }
 
-        /* Lado Direito: Formulário */
-        .form-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+        /* Lado Direito: Formulário Completo */
+        .form-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
         input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; }
-        .btn-submit { width: 100%; padding: 15px; background: var(--success); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; }
-        .whatsapp-link { display: block; text-align: center; margin-top: 15px; color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+        .btn-submit { width: 100%; padding: 15px; background: var(--success); color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
 
-        @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="content-grid">
-            
-            <div class="about-box">
-                <h2>RW Ar Condicionado</h2>
-                <p>Resolvemos seu problema com <b>velocidade, responsabilidade e preço justo</b>. Sem enrolação.</p>
-                <p>Somos especialistas em climatização no interior. Atendemos com transparência total, focados na durabilidade do seu aparelho e na sua saúde.</p>
-                <ul>
-                    <li>Atendimento técnico ágil</li>
-                    <li>Orçamentos honestos</li>
-                    <li>Instalação com garantia</li>
-                    <li>Higienização profunda</li>
-                </ul>
-            </div>
+        <div class="about-box">
+            <h2>RW Ar Condicionado</h2>
+            <p>Atendimento rápido e profissional para instalação, higienização e manutenção.</p>
+            <ul>
+                <li>Instalação de modelos Split e Inverter</li>
+                <li>Higienização profunda (anti-bactérias)</li>
+                <li>Manutenção e conserto técnico</li>
+                <li>Orçamentos rápidos e sem enrolação</li>
+            </ul>
+        </div>
 
-            <div class="form-card">
-                <h3>Solicite seu Orçamento</h3>
-                <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST" style="margin-top:20px;">
-                    <input type="text" name="nome" placeholder="Seu Nome" required>
-                    <input type="text" name="problema" placeholder="Descreva o problema (ex: não gela, barulho)" required>
-                    <select name="altura">
-                        <option value="">Altura do local (Acesso à máquina)</option>
-                        <option value="Térreo">Térreo</option>
-                        <option value="2º andar">2º Andar</option>
-                        <option value="Andar superior (precisa de escada)">Andar superior (precisa de escada)</option>
-                    </select>
-                    <button type="submit" class="btn-submit">Enviar Pedido de Orçamento</button>
-                </form>
-                <a href="https://wa.me/5500999999999?text=Olá, quero um orçamento direto." class="whatsapp-link">
-                    Ou clique aqui e fale direto pelo WhatsApp ➔
-                </a>
-            </div>
+        <div class="form-card">
+            <h3>Solicite seu Orçamento</h3>
+            <form id="formOrcamento" action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST" style="margin-top:20px;">
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                
+                <select id="servico" name="servico" onchange="atualizarFormulario()" required>
+                    <option value="">Selecione o serviço</option>
+                    <option value="instalacao">Instalação</option>
+                    <option value="limpeza">Limpeza / Higienização</option>
+                    <option value="conserto">Conserto / Manutenção</option>
+                </select>
 
+                <div id="camposExtras"></div>
+
+                <select name="btu">
+                    <option value="">Capacidade (BTUs)</option>
+                    <option value="9000">9.000 BTUs</option>
+                    <option value="12000">12.000 BTUs</option>
+                    <option value="18000">18.000 BTUs</option>
+                    <option value="24000+">24.000 ou mais</option>
+                </select>
+
+                <select name="altura">
+                    <option value="">Altura do local</option>
+                    <option value="Terreo">Térreo</option>
+                    <option value="2andar">2º Andar</option>
+                    <option value="Escada">Andar superior (precisa de escada)</option>
+                </select>
+
+                <select name="voltagem">
+                    <option value="">Voltagem do local</option>
+                    <option value="110v">110v</option>
+                    <option value="220v">220v</option>
+                </select>
+
+                <button type="submit" class="btn-submit">Enviar Pedido de Orçamento</button>
+            </form>
         </div>
     </div>
 
+    <script>
+        function atualizarFormulario() {
+            const servico = document.getElementById('servico').value;
+            const camposExtras = document.getElementById('camposExtras');
+            if(servico === 'instalacao') {
+                camposExtras.innerHTML = '<input type="text" name="possui_maquina" placeholder="Já possui a máquina? (Sim/Não)" required>';
+            } else {
+                camposExtras.innerHTML = '';
+            }
+        }
+    </script>
 </body>
 </html>
