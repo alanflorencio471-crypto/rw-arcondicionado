@@ -45,11 +45,16 @@
 
         <div class="form-card">
             <h3><i class="fa-solid fa-calendar-check" style="color: var(--primary);"></i> Agende sua Visita</h3>
-            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 20px;">Taxa de visita abatida no valor do serviço aprovado.</p>
+            <p style="font-size: 0.9rem; margin-bottom: 20px; color: #475569; border-left: 3px solid var(--primary); padding-left: 10px;">
+                Prefere atendimento ágil? <b>Preencha o formulário</b> ou <b>clique no chat ao lado</b> para tirar dúvidas e ser atendido pela nossa IA agora mesmo.
+            </p>
+            
             <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST">
                 <input type="text" name="nome" placeholder="Seu Nome Completo" required>
-                <input type="text" name="cep" placeholder="CEP (00000-000)" pattern="\d{5}-?\d{3}" required>
+                <input type="text" id="cep" name="cep" placeholder="CEP (00000-000)" maxlength="9" onblur="buscarEndereco()" required>
+                <input type="text" id="endereco" name="endereco" placeholder="Endereço Automático" readonly>
                 <input type="tel" name="whatsapp" placeholder="Seu WhatsApp com DDD" required>
+                
                 <select id="servico" name="servico" onchange="atualizarFormulario()">
                     <option value="">Selecione o serviço</option>
                     <option value="instalacao">Instalação</option>
@@ -57,7 +62,8 @@
                     <option value="conserto">Conserto / Manutenção</option>
                 </select>
                 <div id="camposExtras"></div>
-                <input type="text" name="problema" placeholder="Descreva o problema (ex: barulho, não gela)" required>
+                <input type="text" name="problema" placeholder="Descreva o problema" required>
+                
                 <select name="altura">
                     <option value="">Altura do local (acesso)</option>
                     <option value="Terreo">Térreo</option>
@@ -70,6 +76,20 @@
     </div>
 
     <script>
+        // Função para buscar endereço via ViaCEP
+        async function buscarEndereco() {
+            const cep = document.getElementById('cep').value.replace(/\D/g, '');
+            if (cep.length === 8) {
+                const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+                const data = await response.json();
+                if (!data.erro) {
+                    document.getElementById('endereco').value = `${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`;
+                } else {
+                    alert("CEP não encontrado.");
+                }
+            }
+        }
+
         function atualizarFormulario() {
             const servico = document.getElementById('servico').value;
             const camposExtras = document.getElementById('camposExtras');
@@ -78,7 +98,7 @@
         }
     </script>
 
-    <!-- Script do Botpress mantido -->
+    <!-- Script do Botpress -->
     <script src="https://cdn.botpress.cloud/desk/webchat/v4.1/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2026/07/15/14/20260715145034-U9DFR84J.js" defer></script>
 
