@@ -3,58 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RW Ar Condicionado | Orçamento Online</title>
+    <title>RW Ar Condicionado | Atendimento Especializado</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; }
-        .container { max-width: 450px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        h1 { color: #0a2540; text-align: center; font-size: 1.5rem; margin-bottom: 20px; }
-        label { display: block; margin-top: 15px; font-weight: 600; font-size: 0.9rem; color: #444; }
-        input, select { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
-        button { width: 100%; padding: 15px; margin-top: 25px; background: #25d366; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1rem; }
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f7f6; color: #333; }
+        
+        /* Layout Grid */
+        .page-wrapper { display: flex; flex-wrap: wrap; max-width: 1000px; margin: 50px auto; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .info-side { flex: 1; padding: 40px; background: #0a2540; color: white; }
+        .form-side { flex: 1; padding: 40px; }
+        
+        h1 { margin-top: 0; }
+        .social-links { margin-top: 30px; }
+        .social-links a { display: block; color: #25d366; text-decoration: none; font-weight: bold; margin-bottom: 10px; }
+        
+        /* Formulário */
+        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        button { width: 100%; padding: 15px; background: #25d366; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
         button:hover { background: #128c7e; }
+
+        @media (max-width: 768px) { .info-side, .form-side { flex: 100%; } }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>RW Ar Condicionado</h1>
-    <p style="text-align: center; color: #666; font-size: 0.9rem;">Preencha os dados abaixo e receba seu orçamento rápido:</p>
+<div class="page-wrapper">
+    <div class="info-side">
+        <h1>RW Ar Condicionado</h1>
+        <p>Especialistas em instalação, higienização e manutenção preventiva.</p>
+        <p>Compromisso com a qualidade, pontualidade e o conforto térmico da sua família ou empresa.</p>
+        
+        <div class="social-links">
+            <p><strong>Conecte-se conosco:</strong></p>
+            <a href="https://wa.me/55SEUNUMERO" style="color: #25d366;">WhatsApp Oficial</a>
+            <a href="https://instagram.com/SEU_USER" style="color: #fff;">Instagram @RW_ArCondicionado</a>
+        </div>
+    </div>
 
-    <label>Serviço Desejado:</label>
-    <select id="servico">
-        <option value="Instalação">Instalação</option>
-        <option value="Limpeza">Limpeza / Higienização</option>
-        <option value="Conserto">Conserto / Manutenção</option>
-    </select>
-
-    <label>Capacidade (BTUs):</label>
-    <input type="text" id="btu" placeholder="Ex: 9.000, 12.000, etc">
-
-    <label>Local (Alvenaria ou Gesso):</label>
-    <input type="text" id="local" placeholder="Ex: Parede de alvenaria">
-
-    <label>Cidade / Bairro:</label>
-    <input type="text" id="bairro" placeholder="Ex: Centro, Bairro Sul">
-
-    <button onclick="enviarWhatsApp()">SOLICITAR ORÇAMENTO</button>
+    <div class="form-side">
+        <h3>Solicite seu Orçamento</h3>
+        <label>Serviço:</label>
+        <select id="servico">
+            <option value="Instalação">Instalação</option>
+            <option value="Limpeza">Limpeza / Higienização</option>
+            <option value="Conserto">Conserto / Manutenção</option>
+        </select>
+        <input type="text" id="btu" placeholder="Capacidade (BTUs)">
+        <input type="text" id="local" placeholder="Local (Ex: Parede de alvenaria)">
+        <input type="text" id="bairro" placeholder="Cidade / Bairro">
+        
+        <button onclick="enviar()">ENVIAR PARA WHATSAPP</button>
+    </div>
 </div>
 
 <script>
-    function enviarWhatsApp() {
-        const servico = document.getElementById('servico').value;
-        const btu = document.getElementById('btu').value;
-        const local = document.getElementById('local').value;
-        const bairro = document.getElementById('bairro').value;
+    function enviar() {
+        const s = document.getElementById('servico').value;
+        const b = document.getElementById('btu').value;
+        const l = document.getElementById('local').value;
+        const c = document.getElementById('bairro').value;
         
-        const numero = "55SEUNUMERO"; // Substitua pelo número (DDD+Número)
-        
-        const mensagem = `Olá! Gostaria de um orçamento para:
-        - Serviço: ${servico}
-        - Capacidade: ${btu}
-        - Local: ${local}
-        - Bairro: ${bairro}`;
-
-        window.location.href = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+        const msg = `Olá, gostaria de um orçamento:%0A- Serviço: ${s}%0A- BTUs: ${b}%0A- Local: ${l}%0A- Região: ${c}`;
+        window.location.href = `https://wa.me/55SEUNUMERO?text=${msg}`;
     }
 </script>
 
