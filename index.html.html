@@ -1,115 +1,62 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RW Ar Condicionado | Instalação, Limpeza e Conserto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>RW Ar Condicionado | Atendimento Rápido</title>
     <style>
-        :root {
-            --primary: #0072ff;
-            --primary-dark: #0052b4;
-            --secondary: #00c6ff;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --success: #25d366;
-            --instagram: #e1306c;
+        :root { 
+            --azul-escuro: #002d72; /* Azul Marinho Profissional */
+            --azul-claro: #0056b3; 
+            --verde-zap: #25d366; 
+            --cinza-bg: #f8f9fa;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        header { background: white; padding: 15px 0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); position: sticky; top: 0; z-index: 100; }
-        .header-content { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
-        .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary); }
-        .logo span { color: var(--dark); }
-        .header-buttons { display: flex; gap: 10px; }
-
-        .btn { display: inline-flex; align-items: center; padding: 12px 24px; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-size: 0.95rem; }
-        .btn-whatsapp { background-color: var(--success); color: white; }
-        .btn-instagram { background-color: var(--instagram); color: white; }
-
-        .hero { background: linear-gradient(135deg, #0052b4 0%, #0072ff 100%); color: white; padding: 60px 0; }
-        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
-        .hero-image { width: 100%; border-radius: 16px; box-shadow: 0 20px 25px rgba(0,0,0,0.25); }
-
-        .features { padding: 40px 0; background: white; }
-        .features-list { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; }
-        .feature-item { flex: 1 1 280px; background: var(--light); padding: 25px; border-radius: 8px; text-align: center; border: 1px solid #e2e8f0; }
-
-        .services { padding: 60px 0; background: var(--light); }
-        .section-title { text-align: center; font-size: 2rem; margin-bottom: 40px; }
-        .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .card { background: white; padding: 35px; border-radius: 12px; text-align: center; border: 1px solid #e2e8f0; }
-
-        .testimonials { padding: 60px 0; background: white; }
-        .grid-testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .testimonial-item { background: var(--light); padding: 30px; border-radius: 8px; border-left: 4px solid var(--primary); }
-
-        footer { background: #020617; color: #94a3b8; padding: 30px 0; text-align: center; }
-
-        @media (max-width: 768px) { .header-content, .hero-grid { grid-template-columns: 1fr; text-align: center; } }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #333; background-color: var(--cinza-bg); }
+        .container { max-width: 450px; margin: 0 auto; padding: 20px; text-align: center; }
+        
+        header { background: var(--azul-escuro); color: white; padding: 40px 20px; border-radius: 0 0 30px 30px; }
+        h1 { margin: 0; font-size: 1.8rem; letter-spacing: -1px; }
+        
+        .cta-box { background: #fff; padding: 25px; margin-top: -20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        select { width: 100%; padding: 15px; margin: 15px 0; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1.1rem; background-color: #fff; }
+        
+        .btn-zap { background: var(--verde-zap); color: white; border: none; padding: 18px; width: 100%; border-radius: 10px; font-weight: 800; font-size: 1.1rem; cursor: pointer; transition: transform 0.2s; }
+        .btn-zap:active { transform: scale(0.98); }
+        
+        .fotos-info { margin-top: 30px; font-size: 0.85rem; color: #666; font-style: italic; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container header-content">
-            <div class="logo">RW <span>Ar Condicionado</span></div>
-            <div class="header-buttons">
-                <a href="https://instagram.com/SEU_USER_AQUI" class="btn btn-instagram">Instagram</a>
-                <a href="https://wa.me/5500999999999" class="btn btn-whatsapp">WhatsApp</a>
-            </div>
-        </div>
-    </header>
+<header>
+    <h1>RW Ar Condicionado</h1>
+    <p>Excelência Técnica e Atendimento Ágil</p>
+</header>
 
-    <section class="hero">
-        <div class="container hero-grid">
-            <div>
-                <h1>Seu Ar Condicionado Gelando como Novo!</h1>
-                <p>Atendimento rápido para instalação, higienização e conserto.</p>
-                <a href="https://wa.me/5500999999999" class="btn btn-whatsapp">Solicitar Orçamento</a>
-            </div>
-            <img src="https://via.placeholder.com/500x300" alt="Equipe RW" class="hero-image">
-        </div>
-    </section>
+<div class="container">
+    <div class="cta-box">
+        <h3>Como podemos ajudar?</h3>
+        <select id="servico">
+            <option value="Instalação">Instalação de Split</option>
+            <option value="Limpeza">Limpeza e Higienização</option>
+            <option value="Manutenção">Conserto e Manutenção</option>
+        </select>
+        <button class="btn-zap" onclick="iniciarAtendimento()">Solicitar Orçamento Agora</button>
+    </div>
 
-    <section class="features">
-        <div class="container">
-            <div class="features-list">
-                <div class="feature-item"><h4>⚡ Resposta Rápida</h4></div>
-                <div class="feature-item"><h4>🤝 Transparência</h4></div>
-                <div class="feature-item"><h4>⭐ Qualidade Garantida</h4></div>
-            </div>
-        </div>
-    </section>
+    <div class="fotos-info">
+        <p>Ao clicar, você será direcionado ao nosso WhatsApp oficial para um atendimento personalizado.</p>
+    </div>
+</div>
 
-    <section class="services">
-        <div class="container">
-            <h2 class="section-title">O Que Nós Fazemos</h2>
-            <div class="grid-services">
-                <div class="card"><h3>Instalação</h3></div>
-                <div class="card"><h3>Higienização</h3></div>
-                <div class="card"><h3>Conserto</h3></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">O Que os Clientes Falam</h2>
-            <div class="grid-testimonials">
-                <div class="testimonial-item"><p>"Atendimento excelente e preço justo!"</p><strong>— Marcos Silva</strong></div>
-                <div class="testimonial-item"><p>"O ar voltou a gelar como novo."</p><strong>— Mariana Costa</strong></div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 RW Ar Condicionado. Todos os direitos reservados.</p>
-    </footer>
+<script>
+    function iniciarAtendimento() {
+        const servico = document.getElementById('servico').value;
+        const numero = "55SEUNUMERO"; // <--- COLOQUE SEU NÚMERO AQUI
+        const mensagem = `Olá, gostaria de um orçamento para: ${servico}. Vi no site de vocês.`;
+        window.location.href = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    }
+</script>
 
 </body>
 </html>
