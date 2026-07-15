@@ -2,59 +2,46 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RW Ar Condicionado | Atendimento Rápido</title>
+    <title>RW Ar Condicionado</title>
     <style>
-        :root { 
-            --azul-escuro: #002d72; /* Azul Marinho Profissional */
-            --azul-claro: #0056b3; 
-            --verde-zap: #25d366; 
-            --cinza-bg: #f8f9fa;
-        }
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #333; background-color: var(--cinza-bg); }
-        .container { max-width: 450px; margin: 0 auto; padding: 20px; text-align: center; }
-        
-        header { background: var(--azul-escuro); color: white; padding: 40px 20px; border-radius: 0 0 30px 30px; }
-        h1 { margin: 0; font-size: 1.8rem; letter-spacing: -1px; }
-        
-        .cta-box { background: #fff; padding: 25px; margin-top: -20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        select { width: 100%; padding: 15px; margin: 15px 0; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1.1rem; background-color: #fff; }
-        
-        .btn-zap { background: var(--verde-zap); color: white; border: none; padding: 18px; width: 100%; border-radius: 10px; font-weight: 800; font-size: 1.1rem; cursor: pointer; transition: transform 0.2s; }
-        .btn-zap:active { transform: scale(0.98); }
-        
-        .fotos-info { margin-top: 30px; font-size: 0.85rem; color: #666; font-style: italic; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 0; }
+        .hero { background: #0a2540; color: white; padding: 60px 20px; text-align: center; }
+        .hero h1 { margin: 0; font-size: 2rem; }
+        .hero p { opacity: 0.8; margin-top: 10px; }
+        .card { max-width: 400px; margin: -40px auto 40px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 20px; font-size: 16px; }
+        button { width: 100%; padding: 15px; background: #25d366; color: white; border: none; border-radius: 6px; font-weight: bold; font-size: 16px; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #128c7e; }
+        .footer { text-align: center; color: #666; font-size: 14px; }
     </style>
 </head>
 <body>
 
-<header>
+<div class="hero">
     <h1>RW Ar Condicionado</h1>
-    <p>Excelência Técnica e Atendimento Ágil</p>
-</header>
+    <p>Instalação e Manutenção Especializada</p>
+</div>
 
-<div class="container">
-    <div class="cta-box">
-        <h3>Como podemos ajudar?</h3>
-        <select id="servico">
-            <option value="Instalação">Instalação de Split</option>
-            <option value="Limpeza">Limpeza e Higienização</option>
-            <option value="Manutenção">Conserto e Manutenção</option>
-        </select>
-        <button class="btn-zap" onclick="iniciarAtendimento()">Solicitar Orçamento Agora</button>
-    </div>
+<div class="card">
+    <label>Selecione o serviço:</label>
+    <select id="servico">
+        <option value="Instalação">Instalação de Ar Condicionado</option>
+        <option value="Limpeza">Limpeza e Higienização</option>
+        <option value="Conserto">Conserto Técnico</option>
+    </select>
+    <button onclick="falarNoZap()">SOLICITAR ORÇAMENTO</button>
+</div>
 
-    <div class="fotos-info">
-        <p>Ao clicar, você será direcionado ao nosso WhatsApp oficial para um atendimento personalizado.</p>
-    </div>
+<div class="footer">
+    <p>Atendimento rápido via WhatsApp</p>
 </div>
 
 <script>
-    function iniciarAtendimento() {
+    function falarNoZap() {
         const servico = document.getElementById('servico').value;
-        const numero = "55SEUNUMERO"; // <--- COLOQUE SEU NÚMERO AQUI
-        const mensagem = `Olá, gostaria de um orçamento para: ${servico}. Vi no site de vocês.`;
-        window.location.href = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+        const numero = "55SEUNUMERO"; // Substitua pelo número (ex: 5511999998888)
+        const texto = `Olá, vi no site de vocês e quero um orçamento para: ${servico}.`;
+        window.location.href = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
     }
 </script>
 
