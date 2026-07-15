@@ -2,46 +2,59 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>RW Ar Condicionado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RW Ar Condicionado | Orçamento Online</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 0; }
-        .hero { background: #0a2540; color: white; padding: 60px 20px; text-align: center; }
-        .hero h1 { margin: 0; font-size: 2rem; }
-        .hero p { opacity: 0.8; margin-top: 10px; }
-        .card { max-width: 400px; margin: -40px auto 40px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 20px; font-size: 16px; }
-        button { width: 100%; padding: 15px; background: #25d366; color: white; border: none; border-radius: 6px; font-weight: bold; font-size: 16px; cursor: pointer; transition: 0.3s; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; }
+        .container { max-width: 450px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h1 { color: #0a2540; text-align: center; font-size: 1.5rem; margin-bottom: 20px; }
+        label { display: block; margin-top: 15px; font-weight: 600; font-size: 0.9rem; color: #444; }
+        input, select { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; margin-top: 25px; background: #25d366; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1rem; }
         button:hover { background: #128c7e; }
-        .footer { text-align: center; color: #666; font-size: 14px; }
     </style>
 </head>
 <body>
 
-<div class="hero">
+<div class="container">
     <h1>RW Ar Condicionado</h1>
-    <p>Instalação e Manutenção Especializada</p>
-</div>
+    <p style="text-align: center; color: #666; font-size: 0.9rem;">Preencha os dados abaixo e receba seu orçamento rápido:</p>
 
-<div class="card">
-    <label>Selecione o serviço:</label>
+    <label>Serviço Desejado:</label>
     <select id="servico">
-        <option value="Instalação">Instalação de Ar Condicionado</option>
-        <option value="Limpeza">Limpeza e Higienização</option>
-        <option value="Conserto">Conserto Técnico</option>
+        <option value="Instalação">Instalação</option>
+        <option value="Limpeza">Limpeza / Higienização</option>
+        <option value="Conserto">Conserto / Manutenção</option>
     </select>
-    <button onclick="falarNoZap()">SOLICITAR ORÇAMENTO</button>
-</div>
 
-<div class="footer">
-    <p>Atendimento rápido via WhatsApp</p>
+    <label>Capacidade (BTUs):</label>
+    <input type="text" id="btu" placeholder="Ex: 9.000, 12.000, etc">
+
+    <label>Local (Alvenaria ou Gesso):</label>
+    <input type="text" id="local" placeholder="Ex: Parede de alvenaria">
+
+    <label>Cidade / Bairro:</label>
+    <input type="text" id="bairro" placeholder="Ex: Centro, Bairro Sul">
+
+    <button onclick="enviarWhatsApp()">SOLICITAR ORÇAMENTO</button>
 </div>
 
 <script>
-    function falarNoZap() {
+    function enviarWhatsApp() {
         const servico = document.getElementById('servico').value;
-        const numero = "55SEUNUMERO"; // Substitua pelo número (ex: 5511999998888)
-        const texto = `Olá, vi no site de vocês e quero um orçamento para: ${servico}.`;
-        window.location.href = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+        const btu = document.getElementById('btu').value;
+        const local = document.getElementById('local').value;
+        const bairro = document.getElementById('bairro').value;
+        
+        const numero = "55SEUNUMERO"; // Substitua pelo número (DDD+Número)
+        
+        const mensagem = `Olá! Gostaria de um orçamento para:
+        - Serviço: ${servico}
+        - Capacidade: ${btu}
+        - Local: ${local}
+        - Bairro: ${bairro}`;
+
+        window.location.href = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
     }
 </script>
 
