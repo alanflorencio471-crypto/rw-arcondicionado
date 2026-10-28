@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W.A. Climatização | Climatização Profissional</title>
+    <title>W.A. Climatização | Instalação, Manutenção e Higienização em Indaiatuba e Região</title>
+    <meta name="description" content="Especialistas em instalação, manutenção e higienização bactericida de ar-condicionado em Indaiatuba, Salto, Itu e região. Horário comercial, após as 18h e finais de semana.">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -16,6 +17,7 @@
             --gold-accent: #f1b82d;
             --gold-gradient: linear-gradient(135deg, #f7cb55 0%, #d49a15 100%);
             --whatsapp: #25d366;
+            --whatsapp-dark: #1da851;
             --text-dark: #0f172a;
             --text-muted: #64748b;
             --bg-light: #f4f7fc;
@@ -33,6 +35,7 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
+            padding-bottom: 70px;
         }
 
         /* Top Bar de Aviso / Cobertura */
@@ -40,7 +43,7 @@
             background: var(--navy-dark);
             color: var(--white);
             text-align: center;
-            padding: 8px 15px;
+            padding: 10px 15px;
             font-size: 0.85rem;
             font-weight: 500;
             display: flex;
@@ -48,7 +51,7 @@
             align-items: center;
             gap: 15px;
             flex-wrap: wrap;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 2px solid var(--gold-accent);
         }
 
         .top-bar span {
@@ -58,7 +61,7 @@
 
         /* Container Principal */
         .container {
-            max-width: 1100px;
+            max-width: 1120px;
             margin: 30px auto;
             padding: 0 20px;
             display: grid;
@@ -79,10 +82,18 @@
         .brand-header {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 15px;
             margin-bottom: 20px;
             padding-bottom: 20px;
             border-bottom: 2px solid #f1f5f9;
+            flex-wrap: wrap;
+        }
+
+        .brand-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         .logo-emblem {
@@ -117,16 +128,29 @@
             margin-top: 4px;
         }
 
+        .promo-badge {
+            background: #fef9c3;
+            border: 1px solid #facc15;
+            color: #854d0e;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         .headline-empresa {
             margin-bottom: 25px;
         }
 
         .headline-empresa h2 {
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             color: var(--navy-dark);
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1.3;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .headline-empresa p {
@@ -158,51 +182,75 @@
             display: flex;
             align-items: flex-start;
             gap: 14px;
-            padding: 10px 12px;
+            padding: 12px 14px;
             border-radius: 10px;
             background: #f8fafc;
             border: 1px solid #eef2f6;
             transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
         }
 
         .service-row:hover {
-            border-color: #cbd5e1;
+            border-color: var(--blue-accent);
+            background: #f0f7ff;
             transform: translateX(4px);
         }
 
         .service-icon {
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             background: var(--navy-dark);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-size: 1rem;
+            color: var(--gold-accent);
+            font-size: 1.05rem;
             flex-shrink: 0;
             margin-top: 2px;
         }
 
+        .service-info {
+            flex: 1;
+        }
+
+        .service-title-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 3px;
+        }
+
         .service-info h4 {
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             font-weight: 700;
             color: var(--navy-dark);
-            margin-bottom: 2px;
+        }
+
+        .price-tag {
+            background: var(--gold-gradient);
+            color: var(--navy-dark);
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 6px;
         }
 
         .service-info p {
             font-size: 0.85rem;
             color: var(--text-muted);
-            line-height: 1.3;
+            line-height: 1.35;
         }
 
-        /* Card Diferencial */
+        /* Card Diferencial de Horários */
         .differential-card {
             background: var(--blue-light);
             border: 1px solid #b8d7ff;
             border-radius: 12px;
-            padding: 16px;
+            padding: 18px;
             margin-bottom: 25px;
         }
 
@@ -211,36 +259,37 @@
             align-items: center;
             gap: 8px;
             color: var(--navy-dark);
-            font-weight: 700;
-            font-size: 0.9rem;
+            font-weight: 800;
+            font-size: 0.88rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
 
         .diff-header i {
             color: #d97706;
+            font-size: 1rem;
         }
 
         .differential-card h4 {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--navy-dark);
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
 
         .differential-card p {
-            font-size: 0.85rem;
+            font-size: 0.86rem;
             color: #334155;
-            line-height: 1.4;
+            line-height: 1.45;
         }
 
         /* Rodapé de Contato na Esquerda */
         .direct-contact {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            padding-top: 15px;
+            gap: 12px;
+            padding-top: 18px;
             border-top: 2px solid #f1f5f9;
         }
 
@@ -252,39 +301,39 @@
             color: var(--navy-dark);
             font-weight: 600;
             font-size: 0.95rem;
+            transition: opacity 0.2s;
+        }
+
+        .contact-pill:hover {
+            opacity: 0.85;
         }
 
         .contact-pill i {
-            width: 32px;
-            height: 32px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
             font-size: 1rem;
+            flex-shrink: 0;
         }
 
-        .contact-pill .fa-whatsapp {
-            background: var(--whatsapp);
-        }
+        .contact-pill .fa-whatsapp { background: var(--whatsapp); }
+        .contact-pill .fa-phone { background: var(--blue-accent); }
+        .contact-pill .fa-instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
 
-        .contact-pill .fa-envelope {
-            background: var(--navy-dark);
-        }
-
-        .contact-pill .fa-instagram {
-            background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
-        }
-
-        /* Painel Formulário */
+        /* Painel Formulário (Lado Direito) */
         .form-card {
             background: var(--white);
             padding: 30px;
             border-radius: 18px;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 25px rgba(7, 29, 73, 0.06);
+            box-shadow: 0 10px 25px rgba(7, 29, 73, 0.08);
             border-top: 5px solid var(--navy-dark);
+            position: sticky;
+            top: 20px;
         }
 
         .badge-regiao {
@@ -294,7 +343,7 @@
             font-size: 0.75rem;
             font-weight: 800;
             text-transform: uppercase;
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
             margin-bottom: 12px;
             letter-spacing: 0.5px;
@@ -303,7 +352,7 @@
         .form-card h3 {
             font-size: 1.3rem;
             color: var(--navy-dark);
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
@@ -312,26 +361,33 @@
 
         .form-card p.intro-form {
             font-size: 0.85rem;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             color: var(--text-muted);
             border-left: 3px solid var(--blue-accent);
             padding-left: 10px;
         }
 
-        /* Inputs e Formulário */
-        input, select {
+        label.field-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--navy-dark);
+            margin-bottom: 4px;
+        }
+
+        input, select, textarea {
             width: 100%;
-            padding: 12px 14px;
+            padding: 11px 14px;
             margin-bottom: 12px;
             border: 1px solid #cbd5e1;
             border-radius: 8px;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             background: #fff;
             color: var(--text-dark);
             transition: all 0.2s ease;
         }
 
-        input:focus, select:focus {
+        input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--navy-dark);
             box-shadow: 0 0 0 3px rgba(7, 29, 73, 0.1);
@@ -340,7 +396,7 @@
         .btn-submit {
             width: 100%;
             padding: 14px;
-            background: var(--navy-dark);
+            background: var(--whatsapp);
             color: var(--white);
             border: none;
             border-radius: 8px;
@@ -352,53 +408,110 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            box-shadow: 0 4px 12px rgba(7, 29, 73, 0.2);
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
             margin-top: 5px;
         }
 
         .btn-submit:hover {
-            background: var(--blue-accent);
+            background: var(--whatsapp-dark);
             transform: translateY(-2px);
         }
 
-        /* Botão Direto WhatsApp no Formulário */
-        .btn-direct-whats {
+        .btn-direct-call {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             width: 100%;
             padding: 12px;
-            margin-top: 15px;
-            background: #f0fdf4;
-            color: #15803d;
-            border: 1px solid #bbf7d0;
+            margin-top: 12px;
+            background: #f8fafc;
+            color: var(--navy-dark);
+            border: 1px solid #cbd5e1;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.9rem;
             transition: all 0.2s;
         }
 
-        .btn-direct-whats:hover {
+        .btn-direct-call:hover {
+            background: var(--navy-dark);
+            color: var(--white);
+            border-color: var(--navy-dark);
+        }
+
+        .trust-pills {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            margin-top: 18px;
+            padding-top: 15px;
+            border-top: 1px solid #f1f5f9;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .trust-pills div {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-weight: 600;
+        }
+
+        .trust-pills i {
+            color: var(--navy-dark);
+            font-size: 1rem;
+        }
+
+        /* Botão Flutuante de WhatsApp */
+        .floating-whats {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
             background: var(--whatsapp);
             color: var(--white);
-            border-color: var(--whatsapp);
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            z-index: 999;
+            transition: transform 0.2s;
+        }
+
+        .floating-whats:hover {
+            transform: scale(1.05);
+        }
+
+        .floating-whats i {
+            font-size: 1.4rem;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px 20px;
             font-size: 0.85rem;
             color: var(--text-muted);
             border-top: 1px solid #e2e8f0;
             margin-top: 40px;
+            background: var(--white);
         }
 
-        @media (max-width: 820px) {
+        @media (max-width: 850px) {
             .container {
                 grid-template-columns: 1fr;
                 margin: 20px auto;
+            }
+            .form-card {
+                position: static;
             }
         }
     </style>
@@ -407,58 +520,201 @@
 
     <!-- Faixa de Cobertura Superior -->
     <div class="top-bar">
-        <div><i class="fa-solid fa-location-dot"></i> Atendemos: <span>Indaiatuba e Região</span></div>
+        <div><i class="fa-solid fa-location-dot"></i> Cobertura: <span>Indaiatuba, Salto, Itu e Toda a Região</span></div>
         <div>•</div>
-        <div><i class="fa-solid fa-clock"></i> Disponibilidade: <span>Após 18h e Finais de Semana</span></div>
+        <div><i class="fa-solid fa-clock"></i> Atendimento: <span>Horário Comercial + Plantão Após 18h e Fins de Semana</span></div>
     </div>
 
     <div class="container">
         <!-- Lado Esquerdo: Identidade Visual e Serviços -->
         <div class="about-box">
             <div class="brand-header">
-                <div class="logo-emblem">
-                    <i class="fa-solid fa-snowflake"></i>
+                <div class="brand-left">
+                    <div class="logo-emblem">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <div class="brand-title">
+                        <h1>W.A. Climatização</h1>
+                        <p>Residencial & Comercial</p>
+                    </div>
                 </div>
-                <div class="brand-title">
-                    <h1>W.A. Climatização</h1>
-                    <p>Climatização Profissional</p>
+                <div class="promo-badge">
+                    <i class="fa-solid fa-tag"></i> Higienização a partir de R$ 180
                 </div>
             </div>
 
             <div class="headline-empresa">
-                <h2>Manutenção de Ar-Condicionado sem parar sua empresa</h2>
-                <p>Soluções completas com atendimento ágil, técnicos certificados e foco na eficiência do seu conforto térmico e produtividade.</p>
+                <h2>Instalação, Manutenção e Higienização de Ar-Condicionado com Garantia Técnica</h2>
+                <p>Atendemos residências, clínicas, comércios e escritórios em Indaiatuba, Salto, Itu e região com agilidade, limpeza impecável e horários que se adaptam à sua rotina.</p>
             </div>
 
             <div class="services-section">
-                <h3><i class="fa-solid fa-screwdriver-wrench" style="color: var(--navy-dark);"></i> Nossos Serviços</h3>
+                <h3><i class="fa-solid fa-screwdriver-wrench" style="color: var(--navy-dark);"></i> Nossos Serviços Especializados</h3>
                 <div class="services-list">
-                    <div class="service-row">
-                        <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
-                        <div class="service-info">
-                            <h4>Instalação</h4>
-                            <p>Instalação completa de sistemas residencial e comercial com garantia e segurança.</p>
-                        </div>
-                    </div>
-
-                    <div class="service-row">
+                    
+                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Limpeza%20e%20Higieniza%C3%A7%C3%A3o%20de%20Ar-Condicionado." target="_blank" class="service-row">
                         <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
                         <div class="service-info">
-                            <h4>Limpeza e Higienização</h4>
-                            <p>Higienização técnica profunda para restaurar a qualidade do ar e reduzir consumo de energia.</p>
+                            <div class="service-title-line">
+                                <h4>Limpeza e Higienização Bactericida</h4>
+                                <span class="price-tag">A partir de R$ 180</span>
+                            </div>
+                            <p>Eliminação profunda de fungos, ácaros, bactérias e mau cheiro. Melhora a saúde respiratória e reduz até 30% no consumo de luz.</p>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="service-row">
-                        <div class="service-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Instala%C3%A7%C3%A3o%20de%20Ar-Condicionado." target="_blank" class="service-row">
+                        <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
                         <div class="service-info">
-                            <h4>Manutenção Preventiva</h4>
-                            <p>Revisão periódica para evitar falhas inesperadas e prolongar a vida útil do aparelho.</p>
+                            <div class="service-title-line">
+                                <h4>Instalação Técnica Padrão Fabricante</h4>
+                            </div>
+                            <p>Instalação de aparelhos Split, Inverter, Piso-Teto e Cassete com vácuo no sistema, acabamento limpo e preservação da garantia.</p>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="service-row">
+                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20preciso%20de%20Conserto%20/%20Manuten%C3%A7%C3%A3o%20no%20meu%20Ar-Condicionado." target="_blank" class="service-row">
                         <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
                         <div class="service-info">
-                            <h4>Manutenção Corretiva</h4>
-                            <p>Diagnóstico e reparo rápido para restaurar o funcionamento do ar de forma imediata.</p>
+                            <div class="service-title-line">
+                                <h4>Conserto Rápido e Carga de Gás</h4>
+                            </div>
+                            <p>Seu ar parou de gelar, está pingando água ou fazendo barulho? Diagnóstico preciso, recarga de gás e troca de componentes.</p>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20sobre%20Manuten%C3%A7%C3%A3o%20Preventiva%20para%20Empresa/Resid%C3%AAncia." target="_blank" class="service-row">
+                        <div class="service-icon"><i class="fa-solid fa-circle-check"></i></div>
+                        <div class="service-info">
+                            <div class="service-title-line">
+                                <h4>Manutenção Preventiva & Planos Comerciais</h4>
+                            </div>
+                            <p>Revisão elétrica e mecânica periódica para clínicas, lojas, escritórios e residências, evitando paradas no auge do calor.</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Card Diferencial -->
+            <div class="differential-card">
+                <div class="diff-header">
+                    <i class="fa-solid fa-calendar-check"></i> Flexibilidade Total de Horários
+                </div>
+                <h4>Atendemos em Horário Comercial, Após as 18h e aos Finais de Semana!</h4>
+                <p>Você escolhe o melhor momento: realizamos visitas e serviços durante o dia ou, se preferir não interromper o seu trabalho ou o expediente da sua empresa, atendemos à noite (após as 18h), aos sábados e domingos.</p>
+            </div>
+
+            <!-- Contatos Diretos -->
+            <div class="direct-contact">
+                <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20W.A.%20Climatiza%C3%A7%C3%A3o%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="contact-pill">
+                    <i class="fa-brands fa-whatsapp"></i> (19) 97101-1131 — Orçamento Rápido via WhatsApp
+                </a>
+                <a href="tel:+5519971011131" class="contact-pill">
+                    <i class="fa-solid fa-phone"></i> Ligar Agora: (19) 97101-1131
+                </a>
+                <a href="https://www.instagram.com/rw.arcondicionadoclima" target="_blank" class="contact-pill">
+                    <i class="fa-brands fa-instagram"></i> @rw.arcondicionadoclima — Veja Nossos Serviços
+                </a>
+            </div>
+        </div>
+
+        <!-- Lado Direito: Formulário Direto para WhatsApp -->
+        <div class="form-card">
+            <span class="badge-regiao"><i class="fa-solid fa-bolt"></i> Resposta Imediata</span>
+            <h3><i class="fa-brands fa-whatsapp" style="color: var(--whatsapp);"></i> Solicitar Orçamento</h3>
+            <p class="intro-form">Preencha abaixo e receba seu atendimento prioritário agora mesmo no WhatsApp:</p>
+
+            <form id="whatsForm" onsubmit="enviarParaWhatsApp(event)">
+                <label class="field-label">Seu Nome ou Empresa *</label>
+                <input type="text" id="nome" placeholder="Ex: João Silva / Clínica Saúde" required>
+
+                <label class="field-label">Qual serviço você precisa? *</label>
+                <select id="servico" required>
+                    <option value="Higienização e Limpeza (A partir de R$ 180)">Higienização e Limpeza (A partir de R$ 180)</option>
+                    <option value="Instalação de Ar-Condicionado">Instalação de Ar-Condicionado</option>
+                    <option value="Conserto / Ar parou de gelar">Conserto / Ar parou de gelar</option>
+                    <option value="Manutenção Preventiva">Manutenção Preventiva</option>
+                    <option value="Outros Serviços">Outros Serviços / Dúvidas</option>
+                </select>
+
+                <label class="field-label">Sua Cidade *</label>
+                <select id="cidade" required>
+                    <option value="Indaiatuba">Indaiatuba</option>
+                    <option value="Salto">Salto</option>
+                    <option value="Itu">Itu</option>
+                    <option value="Elias Fausto">Elias Fausto</option>
+                    <option value="Monte Mor">Monte Mor</option>
+                    <option value="Outra cidade da região">Outra cidade da região</option>
+                </select>
+
+                <label class="field-label">Melhor período para atendimento *</label>
+                <select id="periodo" required>
+                    <option value="Horário Comercial (Manhã ou Tarde)">Horário Comercial (Manhã ou Tarde)</option>
+                    <option value="Após as 18h (Noturno)">Após as 18h (Período Noturno)</option>
+                    <option value="Final de Semana (Sábado ou Domingo)">Final de Semana (Sábado ou Domingo)</option>
+                    <option value="Urgente / O mais rápido possível">Urgente / O mais rápido possível</option>
+                </select>
+
+                <label class="field-label">Quantidade de aparelhos (Opcional)</label>
+                <input type="number" id="qtd" placeholder="Ex: 1, 2, 5..." min="1" value="1">
+
+                <button type="submit" class="btn-submit">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i> Enviar e Receber Orçamento
+                </button>
+            </form>
+
+            <a href="tel:+5519971011131" class="btn-direct-call">
+                <i class="fa-solid fa-phone-volume"></i> Prefere ligar? (19) 97101-1131
+            </a>
+
+            <div class="trust-pills">
+                <div>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Garantia Técnica</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-broom"></i>
+                    <span>Serviço Limpo</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span>Pontualidade</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20W.A.%20Climatiza%C3%A7%C3%A3o%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="floating-whats">
+        <i class="fa-brands fa-whatsapp"></i> Orçamento Rápido
+    </a>
+
+    <footer>
+        <strong>W.A. Climatização</strong> — Soluções Residenciais e Comerciais em Climatização.<br>
+        Atendimento em Indaiatuba, Salto, Itu e toda a região • Tel/WhatsApp: (19) 97101-1131<br>
+        © 2026 W.A. Climatização. Todos os direitos reservados.
+    </footer>
+
+    <script>
+        function enviarParaWhatsApp(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome').value.trim();
+            const servico = document.getElementById('servico').value;
+            const cidade = document.getElementById('cidade').value;
+            const periodo = document.getElementById('periodo').value;
+            const qtd = document.getElementById('qtd').value || '1';
+
+            const mensagem = `Olá, equipe da *W.A. Climatização*! Vim pelo site e gostaria de um orçamento:\n\n` +
+                             `👤 *Nome/Empresa:* ${nome}\n` +
+                             `❄️ *Serviço:* ${servico}\n` +
+                             `🔢 *Aparelhos:* ${qtd}\n` +
+                             `📍 *Cidade:* ${cidade}\n` +
+                             `⏰ *Preferência de Horário:* ${periodo}`;
+
+            const url = `https://wa.me/5519971011131?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
