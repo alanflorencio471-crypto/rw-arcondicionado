@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W.A. Climatização | Instalação, Manutenção e Higienização em Indaiatuba e Região</title>
-    <meta name="description" content="Especialistas em instalação, manutenção e higienização de ar-condicionado. Avaliações em todos os horários e serviços após as 18h e finais de semana.">
+    <title>W.A. Climatização | Instalação, Manutenção e Conserto de Ar-Condicionado em Indaiatuba e Região</title>
+    <meta name="description" content="Empresa especializada em instalação padrão fabricante, manutenção corretiva, preventiva e higienização de ar-condicionado. Atendimento comercial de segunda a sexta + diferencial pós-18h e finais de semana.">
     
     <!-- Meta Pixel Code -->
     <script>
@@ -32,6 +32,19 @@
       gtag('js', new Date());
 
       gtag('config', 'AW-18490193353');
+
+      function registrarConversaoLead() {
+          if (typeof gtag === 'function') {
+              gtag('event', 'generate_lead', {
+                  'send_to': 'AW-18490193353',
+                  'value': 180.0,
+                  'currency': 'BRL'
+              });
+          }
+          if (typeof fbq === 'function') {
+              fbq('track', 'Contact');
+          }
+      }
     </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -67,7 +80,6 @@
             padding-bottom: 70px;
         }
 
-        /* Top Bar de Aviso / Cobertura */
         .top-bar {
             background: var(--navy-dark);
             color: var(--white);
@@ -88,7 +100,6 @@
             font-weight: 700;
         }
 
-        /* Container Principal */
         .container {
             max-width: 1120px;
             margin: 30px auto;
@@ -99,7 +110,6 @@
             align-items: start;
         }
 
-        /* Painel da Empresa (Identidade Visual) */
         .about-box {
             background: var(--white);
             padding: 35px 30px;
@@ -150,20 +160,20 @@
 
         .brand-title p {
             font-size: 0.8rem;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--blue-accent);
             font-weight: 700;
             margin-top: 4px;
         }
 
-        .promo-badge {
-            background: #fef9c3;
-            border: 1px solid #facc15;
-            color: #854d0e;
+        .authority-badge {
+            background: var(--blue-light);
+            border: 1px solid #b8d7ff;
+            color: var(--navy-dark);
             padding: 6px 12px;
             border-radius: 8px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -187,7 +197,6 @@
             font-size: 0.95rem;
         }
 
-        /* Seção Nossos Serviços */
         .services-section h3 {
             font-size: 0.95rem;
             text-transform: uppercase;
@@ -211,7 +220,7 @@
             display: flex;
             align-items: flex-start;
             gap: 14px;
-            padding: 12px 14px;
+            padding: 13px 15px;
             border-radius: 10px;
             background: #f8fafc;
             border: 1px solid #eef2f6;
@@ -259,10 +268,10 @@
             color: var(--navy-dark);
         }
 
-        .price-tag {
+        .tag-badge {
             background: var(--gold-gradient);
             color: var(--navy-dark);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 800;
             padding: 2px 8px;
             border-radius: 6px;
@@ -274,7 +283,6 @@
             line-height: 1.35;
         }
 
-        /* Card Diferencial de Horários */
         .differential-card {
             background: var(--blue-light);
             border: 1px solid #b8d7ff;
@@ -317,7 +325,6 @@
             color: var(--navy-dark);
         }
 
-        /* Rodapé de Contato na Esquerda */
         .direct-contact {
             display: flex;
             flex-direction: column;
@@ -357,7 +364,6 @@
         .contact-pill .fa-phone { background: var(--blue-accent); }
         .contact-pill .fa-instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
 
-        /* Painel Formulário (Lado Direito) */
         .form-card {
             background: var(--white);
             padding: 30px;
@@ -500,7 +506,6 @@
             font-size: 1rem;
         }
 
-        /* Botão Flutuante de WhatsApp */
         .floating-whats {
             position: fixed;
             bottom: 20px;
@@ -551,15 +556,13 @@
 </head>
 <body>
 
-    <!-- Faixa de Cobertura Superior -->
     <div class="top-bar">
-        <div><i class="fa-solid fa-location-dot"></i> Cobertura: <span>Indaiatuba, Salto, Itu e Toda a Região</span></div>
+        <div><i class="fa-solid fa-location-dot"></i> Atendimento Regional: <span>Indaiatuba, Salto, Itu, Elias Fausto e Monte Mor</span></div>
         <div>•</div>
-        <div><i class="fa-solid fa-clock"></i> <span>Avaliações Todos os Dias</span> + Serviços Após 18h e Fins de Semana</div>
+        <div><i class="fa-solid fa-clock"></i> <span>Horário Comercial (Seg a Sex)</span> + Diferencial Pós-18h e Fins de Semana</div>
     </div>
 
     <div class="container">
-        <!-- Lado Esquerdo: Identidade Visual e Serviços -->
         <div class="about-box">
             <div class="brand-header">
                 <div class="brand-left">
@@ -568,95 +571,94 @@
                     </div>
                     <div class="brand-title">
                         <h1>W.A. Climatização</h1>
-                        <p>Residencial & Comercial</p>
+                        <p>Soluções Residenciais & Comerciais</p>
                     </div>
                 </div>
-                <div class="promo-badge">
-                    <i class="fa-solid fa-tag"></i> Higienização a partir de R$ 180
+                <div class="authority-badge">
+                    <i class="fa-solid fa-certificate" style="color: var(--blue-accent);"></i> Empresa com CNPJ, NF e Garantia
                 </div>
             </div>
 
             <div class="headline-empresa">
-                <h2>Instalação, Manutenção e Higienização de Ar-Condicionado com Garantia Técnica</h2>
-                <p>Atendemos residências, clínicas, comércios e escritórios na região com avaliações em qualquer dia/horário e execução de serviços no momento que melhor se adapta à sua rotina.</p>
+                <h2>Especialistas em Instalação, Manutenção, Conserto e Higienização de Ar-Condicionado</h2>
+                <p>Atendemos residências, comércios, clínicas e escritórios com equipe técnica própria, ferramental de ponta e total rigor às normas dos fabricantes.</p>
             </div>
 
             <div class="services-section">
-                <h3><i class="fa-solid fa-screwdriver-wrench" style="color: var(--navy-dark);"></i> Nossos Serviços Especializados</h3>
+                <h3><i class="fa-solid fa-screwdriver-wrench" style="color: var(--navy-dark);"></i> Todas as Soluções em Climatização</h3>
                 <div class="services-list">
                     
-                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Limpeza%20e%20Higieniza%C3%A7%C3%A3o%20de%20Ar-Condicionado." target="_blank" class="service-row">
-                        <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
+                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Instala%C3%A7%C3%A3o%20de%20Ar-Condicionado." target="_blank" onclick="registrarConversaoLead()" class="service-row">
+                        <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
                         <div class="service-info">
                             <div class="service-title-line">
-                                <h4>Limpeza e Higienização Bactericida</h4>
-                                <span class="price-tag">A partir de R$ 180</span>
+                                <h4>Instalação e Desinstalação Padrão Fabricante</h4>
+                                <span class="tag-badge">Garantia Técnica</span>
                             </div>
-                            <p>Eliminação profunda de fungos, ácaros, bactérias e mau cheiro. Melhora a saúde respiratória e reduz até 30% no consumo de luz.</p>
+                            <p>Instalação de modelos Split, Inverter, Piso-Teto e Cassete com vácuo no sistema, tubulação de cobre e acabamento impecável.</p>
                         </div>
                     </a>
 
-                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Instala%C3%A7%C3%A3o%20de%20Ar-Condicionado." target="_blank" class="service-row">
-                        <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
-                        <div class="service-info">
-                            <div class="service-title-line">
-                                <h4>Instalação Técnica Padrão Fabricante</h4>
-                            </div>
-                            <p>Instalação de aparelhos Split, Inverter, Piso-Teto e Cassete com vácuo no sistema, acabamento limpo e preservação da garantia.</p>
-                        </div>
-                    </a>
-
-                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20preciso%20de%20Conserto%20/%20Manuten%C3%A7%C3%A3o%20no%20meu%20Ar-Condicionado." target="_blank" class="service-row">
+                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20preciso%20de%20Conserto%20/%20Manuten%C3%A7%C3%A3o%20no%20meu%20Ar-Condicionado." target="_blank" onclick="registrarConversaoLead()" class="service-row">
                         <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
                         <div class="service-info">
                             <div class="service-title-line">
-                                <h4>Conserto Rápido e Carga de Gás</h4>
+                                <h4>Manutenção Corretiva, Conserto e Carga de Gás</h4>
+                                <span class="tag-badge">Diagnóstico Rápido</span>
                             </div>
-                            <p>Seu ar parou de gelar, está pingando água ou fazendo barulho? Diagnóstico preciso, recarga de gás e troca de componentes.</p>
+                            <p>Seu aparelho parou de gelar, está pingando, piscando erro ou com barulho? Reparo de placas, vazamentos, capacitores e recarga de fluido.</p>
                         </div>
                     </a>
 
-                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20sobre%20Manuten%C3%A7%C3%A3o%20Preventiva%20para%20Empresa/Resid%C3%AAncia." target="_blank" class="service-row">
-                        <div class="service-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Limpeza%20e%20Higieniza%C3%A7%C3%A3o%20de%20Ar-Condicionado." target="_blank" onclick="registrarConversaoLead()" class="service-row">
+                        <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
                         <div class="service-info">
                             <div class="service-title-line">
-                                <h4>Manutenção Preventiva & Planos Comerciais</h4>
+                                <h4>Higienização Profunda Bactericida</h4>
+                                <span class="tag-badge">A partir de R$ 180</span>
                             </div>
-                            <p>Revisão elétrica e mecânica periódica para clínicas, lojas, escritórios e residências, evitando paradas no auge do calor.</p>
+                            <p>Lavagem técnica pressurizada com bolsa coletora no local (sem sujeira na parede), eliminando fungos, mau cheiro e reduzindo o gasto de luz.</p>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20sobre%20Manuten%C3%A7%C3%A3o%20Preventiva%20para%20Empresa/Resid%C3%AAncia." target="_blank" onclick="registrarConversaoLead()" class="service-row">
+                        <div class="service-icon"><i class="fa-solid fa-building-shield"></i></div>
+                        <div class="service-info">
+                            <div class="service-title-line">
+                                <h4>Manutenção Preventiva Residencial & Comercial</h4>
+                            </div>
+                            <p>Atendimento avulso ou periódico para residências, clínicas, comércios e escritórios, aumentando a vida útil dos equipamentos.</p>
                         </div>
                     </a>
 
                 </div>
             </div>
 
-            <!-- Card Diferencial Atualizado -->
             <div class="differential-card">
                 <div class="diff-header">
-                    <i class="fa-solid fa-calendar-check"></i> Flexibilidade Total de Horários
+                    <i class="fa-solid fa-calendar-check"></i> Horário Comercial Completo + Plantão Exclusivo
                 </div>
-                <h4>Avaliações Todos os Dias e Serviços aos Finais de Semana e Pós-18h!</h4>
-                <p>Estamos disponíveis para <strong>avaliações e orçamentos em qualquer dia e horário</strong>. Para a execução do serviço, você escolhe o melhor momento: atendemos em horário comercial ou, se preferir não interromper sua rotina, realizamos o trabalho à noite (após as 18h), aos sábados e domingos.</p>
+                <h4>Atendemos de Segunda a Sexta em Horário Comercial + Pós-18h e Fins de Semana!</h4>
+                <p>Realizamos avaliações e serviços durante todo o <strong>horário comercial padrão</strong>. E para clientes ou empresas que não podem parar durante o dia, oferecemos o diferencial de agendamento <strong>após as 18h, aos sábados e domingos</strong>.</p>
             </div>
 
-            <!-- Contatos Diretos -->
             <div class="direct-contact">
-                <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20W.A.%20Climatiza%C3%A7%C3%A3o%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="contact-pill">
-                    <i class="fa-brands fa-whatsapp"></i> (19) 97101-1131 — Orçamento Rápido via WhatsApp
+                <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20W.A.%20Climatiza%C3%A7%C3%A3o%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" onclick="registrarConversaoLead()" class="contact-pill">
+                    <i class="fa-brands fa-whatsapp"></i> (19) 97101-1131 — Falar com Técnico no WhatsApp
                 </a>
-                <a href="tel:+5519971011131" class="contact-pill">
+                <a href="tel:+5519971011131" onclick="registrarConversaoLead()" class="contact-pill">
                     <i class="fa-solid fa-phone"></i> Ligar Agora: (19) 97101-1131
                 </a>
                 <a href="https://www.instagram.com/rw.arcondicionadoclima" target="_blank" class="contact-pill">
-                    <i class="fa-brands fa-instagram"></i> @rw.arcondicionadoclima — Veja Nossos Serviços
+                    <i class="fa-brands fa-instagram"></i> @rw.arcondicionadoclima — Veja Fotos e Vídeos dos Serviços
                 </a>
             </div>
         </div>
 
-        <!-- Lado Direito: Formulário Direto para WhatsApp -->
         <div class="form-card">
-            <span class="badge-regiao"><i class="fa-solid fa-bolt"></i> Resposta Imediata</span>
+            <span class="badge-regiao"><i class="fa-solid fa-bolt"></i> Atendimento Rápido</span>
             <h3><i class="fa-brands fa-whatsapp" style="color: var(--whatsapp);"></i> Solicitar Orçamento</h3>
-            <p class="intro-form">Preencha abaixo e receba seu atendimento prioritário agora mesmo no WhatsApp:</p>
+            <p class="intro-form">Escolha o serviço abaixo para iniciar seu atendimento direto no WhatsApp da nossa equipe:</p>
 
             <form id="whatsForm" onsubmit="enviarParaWhatsApp(event)">
                 <label class="field-label">Seu Nome ou Empresa *</label>
@@ -664,11 +666,11 @@
 
                 <label class="field-label">Qual serviço você precisa? *</label>
                 <select id="servico" required>
-                    <option value="Higienização e Limpeza (A partir de R$ 180)">Higienização e Limpeza (A partir de R$ 180)</option>
-                    <option value="Instalação de Ar-Condicionado">Instalação de Ar-Condicionado</option>
-                    <option value="Conserto / Ar parou de gelar">Conserto / Ar parou de gelar</option>
-                    <option value="Manutenção Preventiva">Manutenção Preventiva</option>
-                    <option value="Outros Serviços">Outros Serviços / Dúvidas</option>
+                    <option value="Instalação / Desinstalação de Ar-Condicionado">Instalação / Desinstalação de Ar-Condicionado</option>
+                    <option value="Conserto / Manutenção (Ar parou de gelar, pingando, gás)">Conserto / Manutenção (Ar parou, pingando, gás)</option>
+                    <option value="Higienização e Limpeza Bactericida">Higienização e Limpeza Bactericida</option>
+                    <option value="Manutenção Preventiva Comercial / Residencial">Manutenção Preventiva Comercial / Residencial</option>
+                    <option value="Avaliação Técnica no Local">Avaliação Técnica no Local</option>
                 </select>
 
                 <label class="field-label">Sua Cidade *</label>
@@ -681,11 +683,11 @@
                     <option value="Outra cidade da região">Outra cidade da região</option>
                 </select>
 
-                <label class="field-label">Melhor momento para avaliação/serviço *</label>
+                <label class="field-label">Preferência de Horário *</label>
                 <select id="periodo" required>
-                    <option value="Avaliação Imediata / O mais rápido possível">Avaliação Imediata / O mais rápido possível</option>
-                    <option value="Horário Comercial (Manhã ou Tarde)">Horário Comercial (Manhã ou Tarde)</option>
-                    <option value="Após as 18h (Noturno)">Após as 18h (Período Noturno)</option>
+                    <option value="Horário Comercial (Segunda a Sexta)">Horário Comercial (Segunda a Sexta)</option>
+                    <option value="Urgente / O mais rápido possível">Urgente / O mais rápido possível</option>
+                    <option value="Após as 18h (Período Noturno)">Após as 18h (Período Noturno)</option>
                     <option value="Final de Semana (Sábado ou Domingo)">Final de Semana (Sábado ou Domingo)</option>
                 </select>
 
@@ -693,11 +695,11 @@
                 <input type="number" id="qtd" placeholder="Ex: 1, 2, 5..." min="1" value="1">
 
                 <button type="submit" class="btn-submit">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i> Enviar e Receber Orçamento
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i> Solicitar Orçamento no WhatsApp
                 </button>
             </form>
 
-            <a href="tel:+5519971011131" class="btn-direct-call">
+            <a href="tel:+5519971011131" onclick="registrarConversaoLead()" class="btn-direct-call">
                 <i class="fa-solid fa-phone-volume"></i> Prefere ligar? (19) 97101-1131
             </a>
 
@@ -707,25 +709,24 @@
                     <span>Garantia Técnica</span>
                 </div>
                 <div>
-                    <i class="fa-solid fa-broom"></i>
-                    <span>Serviço Limpo</span>
+                    <i class="fa-solid fa-user-check"></i>
+                    <span>Equipe Uniformizada</span>
                 </div>
                 <div>
-                    <i class="fa-solid fa-clock-rotate-left"></i>
-                    <span>Pontualidade</span>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span>Emitimos NF</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Botão Flutuante WhatsApp -->
-    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20W.A.%20Climatiza%C3%A7%C3%A3o%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="floating-whats">
+    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20W.A.%20Climatiza%C3%A7%C3%A3o%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" onclick="registrarConversaoLead()" class="floating-whats">
         <i class="fa-brands fa-whatsapp"></i> Orçamento Rápido
     </a>
 
     <footer>
-        <strong>W.A. Climatização</strong> — Soluções Residenciais e Comerciais em Climatização.<br>
-        Atendimento em Indaiatuba, Salto, Itu e toda a região • Tel/WhatsApp: (19) 97101-1131<br>
+        <strong>W.A. Climatização</strong> — Instalação, Manutenção e Higienização Residencial e Comercial.<br>
+        Atendimento em Indaiatuba, Salto, Itu, Elias Fausto e Monte Mor • Tel/WhatsApp: (19) 97101-1131<br>
         CNPJ: 54.075.847/0001-64<br>
         © 2026 W.A. Climatização. Todos os direitos reservados.
     </footer>
@@ -733,6 +734,7 @@
     <script>
         function enviarParaWhatsApp(event) {
             event.preventDefault();
+            registrarConversaoLead();
             const nome = document.getElementById('nome').value.trim();
             const servico = document.getElementById('servico').value;
             const cidade = document.getElementById('cidade').value;
