@@ -71,6 +71,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -197,7 +198,7 @@
             font-size: 0.95rem;
         }
 
-        .services-section h3 {
+        .services-section h3, .portfolio-section h3 {
             font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -281,6 +282,56 @@
             font-size: 0.85rem;
             color: var(--text-muted);
             line-height: 1.35;
+        }
+
+        /* Galeria de Trabalhos Executados com Fotos do GitHub */
+        .portfolio-section {
+            margin-bottom: 25px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .portfolio-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-img-wrapper {
+            width: 100%;
+            height: 155px;
+            background: var(--navy-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-img-wrapper img, .portfolio-img-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-caption {
+            padding: 8px 10px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            text-align: center;
+            background: var(--white);
+            border-top: 2px solid var(--gold-accent);
         }
 
         .differential-card {
@@ -551,6 +602,12 @@
             .form-card {
                 position: static;
             }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .portfolio-img-wrapper {
+                height: 200px;
+            }
         }
     </style>
 </head>
@@ -588,7 +645,7 @@
                 <h3><i class="fa-solid fa-screwdriver-wrench" style="color: var(--navy-dark);"></i> Todas as Soluções em Climatização</h3>
                 <div class="services-list">
                     
-                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Instala%C3%A7%C3%A3o%20de%20Ar-Condicionado." target="_blank" onclick="registrarConversaoLead()" class="service-row">
+                    <a id="instalacao" href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Instala%C3%A7%C3%A3o%20de%20Ar-Condicionado." target="_blank" onclick="registrarConversaoLead()" class="service-row">
                         <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
                         <div class="service-info">
                             <div class="service-title-line">
@@ -599,7 +656,7 @@
                         </div>
                     </a>
 
-                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20preciso%20de%20Conserto%20/%20Manuten%C3%A7%C3%A3o%20no%20meu%20Ar-Condicionado." target="_blank" onclick="registrarConversaoLead()" class="service-row">
+                    <a id="conserto" href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20preciso%20de%20Conserto%20/%20Manuten%C3%A7%C3%A3o%20no%20meu%20Ar-Condicionado." target="_blank" onclick="registrarConversaoLead()" class="service-row">
                         <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
                         <div class="service-info">
                             <div class="service-title-line">
@@ -610,7 +667,7 @@
                         </div>
                     </a>
 
-                    <a href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Limpeza%20e%20Higieniza%C3%A7%C3%A3o%20de%20Ar-Condicionado." target="_blank" onclick="registrarConversaoLead()" class="service-row">
+                    <a id="limpeza" href="https://wa.me/5519971011131?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Limpeza%20e%20Higieniza%C3%A7%C3%A3o%20de%20Ar-Condicionado." target="_blank" onclick="registrarConversaoLead()" class="service-row">
                         <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
                         <div class="service-info">
                             <div class="service-title-line">
@@ -634,7 +691,34 @@
                 </div>
             </div>
 
-            <div class="differential-card">
+            <!-- Galeria com as suas fotos e vídeos reais do GitHub -->
+            <div class="portfolio-section">
+                <h3><i class="fa-solid fa-camera" style="color: var(--navy-dark);"></i> Trabalhos Reais Executados na Região</h3>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://raw.githubusercontent.com/alanflorencio471-crypto/rw-arcondicionado/main/1.png" alt="Instalação e Condensadora W.A. Climatização">
+                        </div>
+                        <div class="portfolio-caption">Instalação & Padrão Fabricante</div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-img-wrapper">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://raw.githubusercontent.com/alanflorencio471-crypto/rw-arcondicionado/main/WhatsApp%20Video%202026-10-28%20at%2016.46.15%20(1).mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="portfolio-caption">Higienização Profunda com Bolsa</div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://raw.githubusercontent.com/alanflorencio471-crypto/rw-arcondicionado/main/3.png" alt="Manutenção e Serviços W.A. Climatização">
+                        </div>
+                        <div class="portfolio-caption">Manutenção & Carga de Gás</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="horarios" class="differential-card">
                 <div class="diff-header">
                     <i class="fa-solid fa-calendar-check"></i> Horário Comercial Completo + Plantão Exclusivo
                 </div>
